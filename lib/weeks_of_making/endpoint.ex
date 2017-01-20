@@ -1,14 +1,14 @@
-defmodule Weeksofmaking.Endpoint do
-  use Phoenix.Endpoint, otp_app: :weeksofmaking
+defmodule WeeksOfMaking.Endpoint do
+  use Phoenix.Endpoint, otp_app: :weeks_of_making
 
-  socket "/socket", Weeksofmaking.UserSocket
+  socket "/socket", WeeksOfMaking.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :weeksofmaking, gzip: false,
+    at: "/", from: :weeks_of_making, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,8 +35,8 @@ defmodule Weeksofmaking.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_weeksofmaking_key",
+    key: "_weeks_of_making_key",
     signing_salt: "h6hQSIh0"
 
-  plug Weeksofmaking.Router
+  plug WeeksOfMaking.Router
 end

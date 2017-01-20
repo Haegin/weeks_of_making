@@ -1,12 +1,12 @@
-defmodule Weeksofmaking.Web do
+defmodule WeeksOfMaking.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use Weeksofmaking.Web, :controller
-      use Weeksofmaking.Web, :view
+      use WeeksOfMaking.Web, :controller
+      use WeeksOfMaking.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -18,6 +18,8 @@ defmodule Weeksofmaking.Web do
 
   def model do
     quote do
+      alias WeeksOfMaking.{User, Repo}
+
       use Ecto.Schema
 
       import Ecto
@@ -30,12 +32,12 @@ defmodule Weeksofmaking.Web do
     quote do
       use Phoenix.Controller
 
-      alias Weeksofmaking.Repo
+      alias WeeksOfMaking.Repo
       import Ecto
       import Ecto.Query
 
-      import Weeksofmaking.Router.Helpers
-      import Weeksofmaking.Gettext
+      import WeeksOfMaking.Router.Helpers
+      import WeeksOfMaking.Gettext
     end
   end
 
@@ -49,9 +51,9 @@ defmodule Weeksofmaking.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Weeksofmaking.Router.Helpers
-      import Weeksofmaking.ErrorHelpers
-      import Weeksofmaking.Gettext
+      import WeeksOfMaking.Router.Helpers
+      import WeeksOfMaking.ErrorHelpers
+      import WeeksOfMaking.Gettext
     end
   end
 
@@ -65,10 +67,10 @@ defmodule Weeksofmaking.Web do
     quote do
       use Phoenix.Channel
 
-      alias Weeksofmaking.Repo
+      alias WeeksOfMaking.Repo
       import Ecto
       import Ecto.Query
-      import Weeksofmaking.Gettext
+      import WeeksOfMaking.Gettext
     end
   end
 

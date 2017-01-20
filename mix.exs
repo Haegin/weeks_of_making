@@ -1,8 +1,8 @@
-defmodule Weeksofmaking.Mixfile do
+defmodule WeeksOfMaking.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :weeksofmaking,
+    [app: :weeks_of_making,
      version: "0.0.1",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,9 +17,18 @@ defmodule Weeksofmaking.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Weeksofmaking, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+    [mod: {WeeksOfMaking, []},
+     applications: [
+       :phoenix,
+       :phoenix_pubsub,
+       :phoenix_html,
+       :cowboy,
+       :logger,
+       :gettext,
+       :phoenix_ecto,
+       :postgrex,
+       :ueberauth_facebook
+     ]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,6 +46,9 @@ defmodule Weeksofmaking.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
+     {:ueberauth, "~> 0.4"},
+     {:ueberauth_facebook, "~> 0.6"},
+     {:credo, "~> 0.5", only: [:dev, :test]},
      {:cowboy, "~> 1.0"}]
   end
 

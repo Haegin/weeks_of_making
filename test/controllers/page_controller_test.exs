@@ -1,5 +1,5 @@
-defmodule Weeksofmaking.PageControllerTest do
-  use Weeksofmaking.ConnCase
+defmodule WeeksOfMaking.PageControllerTest do
+  use WeeksOfMaking.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

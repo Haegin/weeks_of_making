@@ -1,4 +1,4 @@
 ExUnit.start
 
-Ecto.Adapters.SQL.Sandbox.mode(Weeksofmaking.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(WeeksOfMaking.Repo, :manual)
 

@@ -1,4 +1,4 @@
-defmodule Weeksofmaking.ConnCase do
+defmodule WeeksOfMaking.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,23 +20,23 @@ defmodule Weeksofmaking.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Weeksofmaking.Repo
+      alias WeeksOfMaking.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import Weeksofmaking.Router.Helpers
+      import WeeksOfMaking.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Weeksofmaking.Endpoint
+      @endpoint WeeksOfMaking.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Weeksofmaking.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(WeeksOfMaking.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Weeksofmaking.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(WeeksOfMaking.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

@@ -1,3 +1,3 @@
-defmodule Weeksofmaking.PageViewTest do
-  use Weeksofmaking.ConnCase, async: true
+defmodule WeeksOfMaking.PageViewTest do
+  use WeeksOfMaking.ConnCase, async: true
 end

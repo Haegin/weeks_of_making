@@ -1,4 +1,4 @@
-# Weeksofmaking
+# WeeksOfMaking
 
 To start your Phoenix app:
 

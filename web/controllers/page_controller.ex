@@ -1,5 +1,5 @@
-defmodule Weeksofmaking.PageController do
-  use Weeksofmaking.Web, :controller
+defmodule WeeksOfMaking.PageController do
+  use WeeksOfMaking.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

@@ -1,5 +1,5 @@
-defmodule Weeksofmaking.ErrorView do
-  use Weeksofmaking.Web, :view
+defmodule WeeksOfMaking.ErrorView do
+  use WeeksOfMaking.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

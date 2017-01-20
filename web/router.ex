@@ -1,5 +1,5 @@
-defmodule Weeksofmaking.Router do
-  use Weeksofmaking.Web, :router
+defmodule WeeksOfMaking.Router do
+  use WeeksOfMaking.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,22 @@ defmodule Weeksofmaking.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Weeksofmaking do
+  scope "/", WeeksOfMaking do
     pipe_through :browser # Use the default browser stack
 
+    resources "/users", UserController
     get "/", PageController, :index
   end
 
+  scope "/auth", WeeksOfMaking do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+  end
+
   # Other scopes may use custom stacks.
-  # scope "/api", Weeksofmaking do
+  # scope "/api", WeeksOfMaking do
   #   pipe_through :api
   # end
 end

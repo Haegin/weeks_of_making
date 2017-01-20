@@ -1,3 +1,3 @@
-defmodule Weeksofmaking.PageView do
-  use Weeksofmaking.Web, :view
+defmodule WeeksOfMaking.PageView do
+  use WeeksOfMaking.Web, :view
 end
