@@ -49,6 +49,7 @@ defmodule WeeksOfMaking.Mixfile do
      {:ueberauth, "~> 0.4"},
      {:ueberauth_facebook, "~> 0.6"},
      {:credo, "~> 0.5", only: [:dev, :test]},
+     {:dogma, "~> 0.1", only: :dev},
      {:cowboy, "~> 1.0"}]
   end
 
