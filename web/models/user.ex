@@ -1,10 +1,15 @@
 defmodule WeeksOfMaking.User do
+  @moduledoc """
+  A User record, storing information retrieved from Facebook
+  """
+
   use WeeksOfMaking.Web, :model
 
   schema "users" do
     field :name, :string
     field :email, :string
     field :uid, :string
+    field :token, :string
 
     timestamps()
   end
@@ -14,8 +19,8 @@ defmodule WeeksOfMaking.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :email, :uid])
-    |> validate_required([:name, :email, :uid])
+    |> cast(params, [:name, :email, :uid, :token])
+    |> validate_required([:name, :email, :uid, :token])
   end
 
   @doc """

@@ -7,8 +7,12 @@ defmodule UserFromAuth do
   require IEx
 
   def find_or_create(%Auth{} = auth) do
-    user = %{email: auth.info.email, name: name_from_auth(auth), uid: auth.uid}
-      |> WeeksOfMaking.User.create_or_update
+    user = %{
+      email: auth.info.email,
+      name: name_from_auth(auth),
+      uid: auth.uid,
+      token: auth.credentials.token
+    } |> WeeksOfMaking.User.create_or_update
     {:ok, user}
   end
 

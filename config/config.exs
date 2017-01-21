@@ -24,7 +24,11 @@ config :logger, :console,
 
 config :ueberauth, Ueberauth,
   providers: [
-    facebook: { Ueberauth.Strategy.Facebook, [profile_fields: "name,email"] }
+    facebook: { Ueberauth.Strategy.Facebook, [
+        profile_fields: "name,email",
+        default_scope: "email,public_profile,user_posts"
+      ]
+    }
   ]
 
 config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,

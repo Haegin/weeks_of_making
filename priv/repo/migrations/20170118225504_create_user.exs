@@ -6,6 +6,7 @@ defmodule WeeksOfMaking.Repo.Migrations.CreateUser do
       add :name, :string
       add :email, :string
       add :uid, :string
+      add :token, :string
 
       timestamps()
     end
